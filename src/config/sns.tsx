@@ -12,7 +12,7 @@ export const sns = [
     label: 'Github',
   },
   {
-    href: 'https://twitter.com',
+    href: 'https://twitter.com/sigenome',
     icon: <SiTwitter size={20} />,
     label: 'Twitter',
   },

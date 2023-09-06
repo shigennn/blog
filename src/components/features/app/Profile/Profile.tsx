@@ -10,12 +10,12 @@ export const Profile = () => (
         alt="avatar"
         src="/assets/author.png"
       />
-      <h1 className="text-2xl font-semibold text-primary-1">Next.js</h1>
+      <h1 className="text-2xl font-semibold text-primary-1">siGenome</h1>
     </div>
 
     <p className="text-primary-1">
-      Modern JavaScript Framework: hybrid static & server rendering, TypeScript
-      support, smart bundling, route pre-fetching...
+      最近は3DCG, xRに興味があります。 <br />
+      好きは魚はマアジ。
     </p>
 
     <div className="flex gap-4">
