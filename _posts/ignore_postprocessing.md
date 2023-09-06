@@ -1,15 +1,14 @@
 ---
-title: 'てすと用'
-excerpt: 'てすとです'
-coverImage: '/assets/blog/dynamic-routing/cover.jpg'
-date: '2023-06-01'
+title: '【Unity】 URPでPostProcessingをかけないレイヤーをつくる'
+excerpt: 'UI Textと3D Objectそれぞれに対して、特定のレイヤーだけPost Processingをかけない方法'
+coverImage: '/assets/blog/dynamic-routing/ignore_postprocessing/4.png'
+date: '2023-06-18'
 ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
+  url: '/assets/blog/dynamic-routing/ignore_postprocessing/4.png'
 tags:
   - 'Unity'
+  - 'C#'
 ---
-
-https://stitches.dev/
 
 ## 概要
 
@@ -21,7 +20,8 @@ URP で動的に取り込んだアバターを使ったショート動画生成�
 
 ## UI の TextMeshPro に対して PostProcess をかけない
 
-[f:id:haluika:20230618004747p:plain]
+![](/assets/blog/dynamic-routing/ignore_postprocessing/1.png)
+
 `Canvas` > `Render Mode` を `Screen Space - Overlay` に設定する。以上。  
 いつも Canvas が Scene 上で見たときに大きすぎるのが嫌だったので、深く考えず `Screen Space - Camera` に設定したので少しハマった。
 
@@ -35,7 +35,7 @@ URP のカメラには `Base` と `Overlay` の 2 種類のカメラタイプの
 
 Post Processing をかけたくないレイヤーを決め、特定のオブジェクトに設定する 。
 （ここでは「Ignore Post Processing」とした）  
-[f:id:haluika:20230618005233p:plain]
+![](/assets/blog/dynamic-routing/ignore_postprocessing/2.png)
 
 #### 2. Main Camera(Base)の設定
 
@@ -53,14 +53,14 @@ Post Processing をかけたくないレイヤーを決め、特定のオブジ�
 
 このとき、Transform、FOV などのカメラ設定を Main Camera と同じにして、Main Camera の子に設定しておくと、[CinemaChine](https://unity.com/ja/unity/features/editor/art-and-design/cinemachine) などでカメラを動かしたときも常に同じ View になる。
 
-[f:id:haluika:20230618005842p:plain]
+![](/assets/blog/dynamic-routing/ignore_postprocessing/3.png)
 
 #### 4. Main Camera の Stack 設定
 
 Main Camera の `Stack` に Overlay Camera を追加する
 
 こうなる  
-[f:id:haluika:20230618010006p:plain:w300]
+![](/assets/blog/dynamic-routing/ignore_postprocessing/4.png)
 
 ## uGUI 上ではレイヤーだけ設定し、実行時に動的にそのレイヤーから Post Processing を除外する
 
@@ -115,6 +115,5 @@ class IgnorePPlayer : MonoBehaviour
 
 ## 参考
 
-https://forum.unity.com/threads/post-processing-textmeshpro-unity-bug.680512/
-
-https://note.com/npaka/n/n856472efa5bc
+[https://forum.unity.com/threads/post-processing-textmeshpro-unity-bug.680512/](https://forum.unity.com/threads/post-processing-textmeshpro-unity-bug.680512/)
+[https://forum.unity.com/threads/post-processing-textmeshpro-unity-bug.680512/](https://note.com/npaka/n/n856472efa5bc)
