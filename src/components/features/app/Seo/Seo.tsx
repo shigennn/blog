@@ -14,7 +14,7 @@ export const Seo = () => {
         description="blog"
         openGraph={{
           type: 'website',
-          title: 'blog',
+          title: 'test',
           description: 'blog',
           site_name: 'blog',
           url: ROOT_URL,
