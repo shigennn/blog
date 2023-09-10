@@ -11,7 +11,10 @@ https://vshige.github.io/blog/
 ## 変更点と変更箇所
 
 - ブログタイトル
-  Header.tsx | line16
+  src/components/features/app/Header/Header.tsx | line16
+
+- サイト名
+  src/components/features/app/Seo/Seo.tsx | line13 to 19
 
 - PAT 設定
   .github/workflows/deploy.yml | line41
